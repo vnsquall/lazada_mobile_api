@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test.lazada</groupId>
+    <artifactId>mobile-api</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <profiles>
+        <profile>
+            <id>Vietnam</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <maven.httpRequest.Country>vn</maven.httpRequest.Country>
+            </properties>
+        </profile>
+        <profile>
+            <id>Singapore</id>
+            <properties>
+                <maven.httpRequest.Country>sg</maven.httpRequest.Country>
+            </properties>
+        </profile>
+        <profile>
+            <id>Malaysia</id>
+            <properties>
+                <maven.httpRequest.Country>com.my</maven.httpRequest.Country>
+            </properties>
+        </profile>
+        <profile>
+            <id>Philippines</id>
+            <properties>
+                <maven.httpRequest.Country>com.ph</maven.httpRequest.Country>
+            </properties>
+        </profile>
+        <profile>
+            <id>Indonesia</id>
+            <properties>
+                <maven.httpRequest.Country>co.id</maven.httpRequest.Country>
+            </properties>
+        </profile>
+        <profile>
+            <id>Thailand</id>
+            <properties>
+                <maven.httpRequest.Country>co.th</maven.httpRequest.Country>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/jmeter</directory>
+                <filtering>true</filtering>
+                <targetPath>${project.build.directory}/plans</targetPath>
+            </testResource>
+        </testResources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>Process test resources</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>testResources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.lazerycode.jmeter</groupId>
+                <artifactId>jmeter-maven-plugin</artifactId>
+                <version>1.9.0</version>
+
+                <configuration>
+                    <testFilesDirectory>${project.build.directory}/plans</testFilesDirectory>
+                    <testResultsTimestamp>false</testResultsTimestamp>
+                    <overrideRootLogLevel>DEBUG</overrideRootLogLevel>
+                    <suppressJMeterOutput>false</suppressJMeterOutput>
+                    <ignoreResultFailures>true</ignoreResultFailures>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>jmeter-tests</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jmeter</goal>
+                        </goals>
+                        <configuration>
+                            <jmeterPlugins>
+                                <plugin>
+                                    <groupId>kg.apc</groupId>
+                                    <artifactId>jmeter-plugins</artifactId>
+                                </plugin>
+                            </jmeterPlugins>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>kg.apc</groupId>
+                        <artifactId>jmeter-plugins</artifactId>
+                        <version>1.0.0</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>kg.apc</groupId>
+                                <artifactId>perfmon</artifactId>
+                            </exclusion>
+                            <exclusion>
+                                <groupId>org.apache.jmeter</groupId>
+                                <artifactId>jorphan</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>com.lazerycode.jmeter</groupId>
+                <artifactId>jmeter-analysis-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>analyze</goal>
+                        </goals>
+                        <configuration>
+                            <source>${project.build.directory}/**/*.jtl</source>
+                            <targetDirectory>${project.build.directory}/results</targetDirectory>
+                            <processAllFilesFound>true</processAllFilesFound>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
