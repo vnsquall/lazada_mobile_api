@@ -52,6 +52,13 @@
               <stringProp name="Authorization.domain"></stringProp>
               <stringProp name="Authorization.realm"></stringProp>
             </elementProp>
+            <elementProp name="" elementType="Authorization">
+              <stringProp name="Authorization.url">https://alice-staging.lazada.vn/mobapi/</stringProp>
+              <stringProp name="Authorization.username">L@z@d@</stringProp>
+              <stringProp name="Authorization.password">R0ck4Us!</stringProp>
+              <stringProp name="Authorization.domain"></stringProp>
+              <stringProp name="Authorization.realm"></stringProp>
+            </elementProp>
           </collectionProp>
         </AuthManager>
         <hashTree/>
@@ -1320,38 +1327,6 @@
               <xml>false</xml>
               <fieldNames>false</fieldNames>
               <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>true</xml>
-              <fieldNames>false</fieldNames>
-              <responseHeaders>true</responseHeaders>
               <requestHeaders>false</requestHeaders>
               <responseDataOnError>false</responseDataOnError>
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>

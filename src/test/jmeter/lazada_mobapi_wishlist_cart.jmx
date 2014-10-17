@@ -203,7 +203,7 @@
               </elementProp>
               <elementProp name="q" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                <stringProp name="Argument.value">Nike</stringProp>
+                <stringProp name="Argument.value">Adidas</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">q</stringProp>
@@ -400,15 +400,6 @@
           <stringProp name="TestPlan.comments">Try to get https://alice-staging.lazada.vn/mobapi/main/fetchdata/</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="0"></stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="120634261">&quot;success&quot;: true</stringProp>
