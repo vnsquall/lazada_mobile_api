@@ -16,37 +16,37 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <maven.httpRequest.Country>vn</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.vn</maven.httpRequest.Country>
             </properties>
         </profile>
         <profile>
             <id>Singapore</id>
             <properties>
-                <maven.httpRequest.Country>sg</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.sg</maven.httpRequest.Country>
             </properties>
         </profile>
         <profile>
             <id>Malaysia</id>
             <properties>
-                <maven.httpRequest.Country>com.my</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.com.my</maven.httpRequest.Country>
             </properties>
         </profile>
         <profile>
             <id>Philippines</id>
             <properties>
-                <maven.httpRequest.Country>com.ph</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.com.ph</maven.httpRequest.Country>
             </properties>
         </profile>
         <profile>
             <id>Indonesia</id>
             <properties>
-                <maven.httpRequest.Country>co.id</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.co.id</maven.httpRequest.Country>
             </properties>
         </profile>
         <profile>
             <id>Thailand</id>
             <properties>
-                <maven.httpRequest.Country>co.th</maven.httpRequest.Country>
+                <maven.httpRequest.Country>www.lazada.co.th</maven.httpRequest.Country>
             </properties>
         </profile>
     </profiles>
