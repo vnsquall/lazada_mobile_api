@@ -126,23 +126,23 @@
                 </dependencies>
             </plugin>
 
-            <!--<plugin>-->
-            <!--<groupId>com.lazerycode.jmeter</groupId>-->
-            <!--<artifactId>jmeter-analysis-maven-plugin</artifactId>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<phase>verify</phase>-->
-            <!--<goals>-->
-            <!--<goal>analyze</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<source>${project.build.directory}/**/*.jtl</source>-->
-            <!--<targetDirectory>${project.build.directory}/results</targetDirectory>-->
-            <!--<processAllFilesFound>true</processAllFilesFound>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+            <groupId>com.lazerycode.jmeter</groupId>
+            <artifactId>jmeter-analysis-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>analyze</goal>
+                    </goals>
+                <configuration>
+                    <source>${project.build.directory}/**/*.jtl</source>
+                    <targetDirectory>${project.build.directory}/results</targetDirectory>
+                    <processAllFilesFound>true</processAllFilesFound>
+                </configuration>
+                </execution>
+            </executions>
+            </plugin>
         </plugins>
     </build>
 
